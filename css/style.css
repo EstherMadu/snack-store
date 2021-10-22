@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root{
+    --primary-color: #c13d24;
+    --secondary-color: #852916;
+    --dark-color: #3a0e06;
+    --light-color: #f4f4f4;
+}
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;   
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6p;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+h1, 
+h2{
+    font-weight: 300px;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p{
+    margin: 10px 0;
+}
+
+/* img{
+    width: 100%;
+} */
+
+/* Navbar */
+.navbar{
+    background-color: var(--primary-color);
+    color: #fff;
+    height: 70px; 
+}
+
+.navbar ul{
+    display: flex
+}
+
+.navbar a{
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover{
+    border-bottom: 2px #fff solid;
+}
+
+.navbar .flex{
+    justify-content: space-between;
+}
+
+/* Showcase */
+.showcase{
+    height: 400px;
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;
+}
+
+.showcase h1{
+    font-size: 40px;
+}
+
+.showcase p{
+    margin: 20px 0;
+}
+
+.showcase .grid {
+    overflow: visible;
+    grid-template-columns: 55% auto;
+    gap: 30px;
+}
+
+.showcase-form{
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100;
+}
+
+.showcase-form .form-control{
+    margin: 30px 0;
+}
+
+.showcase-form input[type = 'text'],
+.showcase-form input[type = 'email'] {
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.showcase-form [value = 'send'] {
+    color: #fff;
+}
+
+.showcase-form input:focus{
+    outline: none;
+}
+
+.showcase::before,
+.showcase::after{
+    content: '';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left:0;
+    background: #fff;
+    transform: skewY(-3deg);
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+}
+
+/* Product Section */
+
+.products {
+    padding-top: 150px;
+    animation: slideInFromBottom 1s ease-in;
+}
+  
+.product-heading {
+    max-width: 500px;
+    margin: auto;
+    font-size: 70px;
+    text-align: center;
+}
+
+.product-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin-top: 100px;
+    text-align: center;
+    font-family: arial;
+    transition: transform 0.2s ease-in;
+}
+
+.product-card:hover{
+    transform: translateY(15px);
+}
+
+  
+.price {
+    color: grey;
+    font-size: 22px;
+}
+  
+.product-card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: var(--primary-color);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+  
+.product-card button:hover {
+    opacity: 0.7;
+}
+
+/*Reviews */
+.reviews{
+    padding-top: 50px;
+}
+
+.reviews .grid{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.reviews .grid > *:first-child{
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+.card h1{
+    text-align: center;
+    font-size: 75px;
+}
+
+/* Meet */
+.meet .grid{
+    grid-template-columns: 4fr 3fr;
+}
+
+/* Countries */
+.countries{
+    padding: 50px;
+}
+
+.countries .flex {
+    flex-wrap: wrap;
+  }
+
+.countries .card{
+    overflow: hidden;
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in;
+}
+
+.countries .card h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.countries .card:hover{
+    transform: translateY(-15px);
+}
+
+/* Footer */
+.footer .social a{
+    margin: 0 10px;
+}
+
+/* Tablets and under */
+@media(max-width: 768px){
+    .grid,
+    .showcase .grid,
+    .products .grid,
+    .reviews .grid,
+    .meet .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    
+    .showcase{
+        height: auto;
+    }
+
+    .showcase-text{
+        text-align: center;
+        margin-top: 40px;
+    }
+    .showcase p{
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 370px;
+    }
+
+    .showcase-form{
+        justify-self: center;
+        margin: auto;
+    }
+
+    .reviews .grid > *:first-child{
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+}
+
+
+/* Mobile */
+@media(max-width: 500px){
+    .navbar{
+        height: 110px;
+    }
+
+    .navbar .flex{
+        flex-direction: column;
+    }
+
+    .navbar ul{
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
